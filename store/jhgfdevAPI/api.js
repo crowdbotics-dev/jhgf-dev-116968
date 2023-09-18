@@ -6,6 +6,24 @@ const jhgfdevAPI = axios.create({
 function api_docs_schema_retrieve(payload) {
   return jhgfdevAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
 }
+function api_v1_cdfs_list(payload) {
+  return jhgfdevAPI.get(`/api/v1/cdfs/`)
+}
+function api_v1_cdfs_create(payload) {
+  return jhgfdevAPI.post(`/api/v1/cdfs/`, payload)
+}
+function api_v1_cdfs_retrieve(payload) {
+  return jhgfdevAPI.get(`/api/v1/cdfs/${payload.id}/`)
+}
+function api_v1_cdfs_update(payload) {
+  return jhgfdevAPI.put(`/api/v1/cdfs/${payload.id}/`, payload)
+}
+function api_v1_cdfs_partial_update(payload) {
+  return jhgfdevAPI.patch(`/api/v1/cdfs/${payload.id}/`, payload)
+}
+function api_v1_cdfs_destroy(payload) {
+  return jhgfdevAPI.delete(`/api/v1/cdfs/${payload.id}/`)
+}
 function api_v1_cvbgh_list(payload) {
   return jhgfdevAPI.get(`/api/v1/cvbgh/`)
 }
@@ -83,6 +101,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_cdfs_list,
+  api_v1_cdfs_create,
+  api_v1_cdfs_retrieve,
+  api_v1_cdfs_update,
+  api_v1_cdfs_partial_update,
+  api_v1_cdfs_destroy,
   api_v1_cvbgh_list,
   api_v1_cvbgh_create,
   api_v1_cvbgh_retrieve,
