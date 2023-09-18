@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Cvbgh,Vbfd,Cvbgh,Vbfd,Cvbgh,Vbfd
-from .serializers import CvbghSerializer,VbfdSerializer,CvbghSerializer,VbfdSerializer,CvbghSerializer,VbfdSerializer
+from home.models import Cvbgh,Vbfd,Cdfs,Cdfs,Cvbgh,Vbfd,Cdfs,Cvbgh,Vbfd
+from .serializers import CvbghSerializer,VbfdSerializer,CdfsSerializer,CdfsSerializer,CvbghSerializer,VbfdSerializer,CdfsSerializer,CvbghSerializer,VbfdSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -42,3 +42,8 @@ class VbfdViewSet(viewsets.ModelViewSet):
     serializer_class = VbfdSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Vbfd.objects.all()
+
+class CdfsViewSet(viewsets.ModelViewSet):
+    serializer_class = CdfsSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Cdfs.objects.all()

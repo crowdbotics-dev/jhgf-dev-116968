@@ -8,3 +8,7 @@ class Vbfd(models.Model):
     'Generated Model'
     ytut = models.BigIntegerField()
     hhfj = models.BigIntegerField()
+class Cdfs(models.Model):
+    'Generated Model'
+    nvnfj = models.BigIntegerField()
+    ryrs = models.BigIntegerField()
